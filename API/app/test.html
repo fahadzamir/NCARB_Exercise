@@ -1,0 +1,14 @@
+﻿<table border="1" class="table">
+    <tr>
+        <th></th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>JobTitle</th>
+    </tr>
+    <tr ng-repeat="person in persons">
+        <td><input type="button" ng-click="showUpdatePersonForm($index)" value="Edit" /></td>
+        <td>{{person.FirstName}}</td>
+        <td>{{person.LastName}}</td>
+        <td>{{person.JobTitle}}</td>
+    </tr>
+</table>

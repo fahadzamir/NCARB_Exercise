@@ -1,0 +1,17 @@
+<table border="1" class="table">
+    <tr>
+        <td>FirstName</td>
+        <td><input ng-model="editablePerson.FirstName" /></td>
+    </tr>
+    <tr>
+        <td>LastName</td>
+        <td><input ng-model="editablePerson.LastName" /></td>
+    </tr>
+    <tr>
+        <td>JobTitle</td>
+        <td><input ng-model="editablePerson.JobTitle" /></td>
+    </tr>
+</table>
+<br />
+<input type="button" ng-click="submitForm()" value="Save" />
+<input type="button" ng-click="cancelForm()" value="Cancel" />
