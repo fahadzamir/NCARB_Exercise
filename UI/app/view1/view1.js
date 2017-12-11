@@ -10,26 +10,18 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope', '$rootScope', '$location','dataservice', function($scope, $rootScope, $location, dataservice) {
-        if (!$rootScope.persons)
-         {
-            dataservice.getPersons().then(function (results) {
-                $rootScope.persons = results.data;
-            },
-            function (error) {
-                alert(error);
-            });
-        }
-        $scope.showUpdatePersonForm = function (id) {
-            $location.path('/view2/' + id);
-        };
-
-        $scope.savePerson = function () {
-            dataservice.updatePerson($rootScope.persons[0]).then(function (results) {
-                $rootScope.persons = results.data;
-            },
-            function (error) {
-                alert('error saving data');
-                alert(error);
-            });
-        }
+	if (!$rootScope.persons)
+	 {
+		dataservice.getPersons().then(function (results) {
+			$rootScope.persons = results.data;
+		},
+		function (error) {
+			alert(error);
+		});
+	}
+	
+	$scope.showUpdatePersonForm = function (person) {
+		$rootScope.person = person;
+		$location.path('/view2/' + person.Id);
+	};
 }]);

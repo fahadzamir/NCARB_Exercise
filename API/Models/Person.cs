@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TestApi1.Models
 {
-    public class PersonViewModel
+    public class Person
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

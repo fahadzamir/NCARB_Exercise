@@ -6,7 +6,7 @@
         <th>Job Title</th>
     </tr>
     <tr ng-repeat="person in persons">
-        <td><input type="button" ng-click="showUpdatePersonForm($index)" value="Edit" /></td>
+        <td><input type="button" class="btn btn-primary" ng-click="showUpdatePersonForm(person)" value="Edit" /></td>
         <td>{{person.FirstName}}</td>
         <td>{{person.LastName}}</td>
         <td>{{person.JobTitle}}</td>

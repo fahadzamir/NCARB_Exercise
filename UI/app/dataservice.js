@@ -4,12 +4,12 @@ myApp.factory('dataservice',
         function ($http) {
 
             var getPersons = function () {
-                return $http.get("http://localhost:3928/api/personapi");
+                return $http.get("http://localhost:3928/api/person");
 
             }
 
             var updatePerson = function (person) {
-                return $http.post("http://localhost:3928/api/personapi", person);
+                return $http.post("http://localhost:3928/api/person", person);
             };
 
             return {

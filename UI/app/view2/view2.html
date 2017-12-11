@@ -1,17 +1,33 @@
-<table border="1" class="table">
-    <tr>
-        <td>First Name</td>
-        <td><input ng-model="editablePerson.FirstName" /></td>
-    </tr>
-    <tr>
-        <td>Last Name</td>
-        <td><input ng-model="editablePerson.LastName" /></td>
-    </tr>
-    <tr>
-        <td>Job Title</td>
-        <td><input ng-model="editablePerson.JobTitle" /></td>
-    </tr>
-</table>
-<br />
-<input type="button" ng-click="submitForm()" value="Save" />
-<input type="button" ng-click="cancelForm()" value="Cancel" />
+<form name="editPersonForm">
+	<table border="1" class="table">
+		<tr>
+			<td class="column1">First Name</td>
+			<td class="column2">
+				<input name="firstName" ng-model="editablePerson.FirstName" required/>
+				<span class="error" ng-show="editPersonForm.firstName.$error.required">
+					<span>*</span>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td>
+				<input name="lastName" ng-model="editablePerson.LastName" required/>
+				<span class="error" ng-show="editPersonForm.lastName.$error.required">
+					<span>*</span>
+				</span>
+		</tr>
+		<tr>
+			<td>Job Title</td>
+			<td>
+				<input name="jobTitle" ng-model="editablePerson.JobTitle" required/>
+				<span class="error" ng-show="editPersonForm.jobTitle.$error.required">
+					<span>*</span>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<input type="button" class="btn btn-primary" ng-click="submitForm()" value="Save" ng-disabled="editPersonForm.firstName.$invalid || editPersonForm.lastName.$invalid || editPersonForm.jobTitle.$invalid" />
+	<input type="button" class="btn btn-primary" ng-click="cancelForm()" value="Cancel" />
+</form>
