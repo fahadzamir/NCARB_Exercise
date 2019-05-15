@@ -118,6 +118,7 @@ namespace TestApi1.Controllers
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
+        int i = 0;
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
